@@ -40,7 +40,7 @@ class Solution(object):
 
     def max_depth_new(self, root, depth):
         """
-        自顶向下
+        自顶向下，遍历过程中全局记录
         :param root:
         :param depth:
         :return:
