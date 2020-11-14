@@ -17,3 +17,37 @@ class TreeNode(object):
         self.val = val
         self.left = left
         self.right = right
+
+
+class Solution(object):
+    """
+
+    """
+    def __init__(self):
+        self.ans = 0
+
+    def maxDepth(self, root):
+        """
+        自底向上获得结果
+        :type root: TreeNode
+        :rtype: int
+        """
+        if not root:
+            return 0
+        left = self.maxDepth(root.left)
+        right = self.maxDepth(root.right)
+        return max(left, right) + 1
+
+    def max_depth_new(self, root, depth):
+        """
+        自顶向下
+        :param root:
+        :param depth:
+        :return:
+        """
+        if not root:
+            return
+        if not root.left and not root.right:
+            self.ans = max(self.ans, depth)
+        self.max_depth_new(root.left, depth+1)
+        self.max_depth_new(root.right, depth+1)
