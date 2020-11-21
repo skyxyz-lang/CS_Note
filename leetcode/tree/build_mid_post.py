@@ -24,7 +24,7 @@ class TreeNode(object):
         :type postorder: List[int]
         :rtype: TreeNode
         """
-        root = self.build(0, len(inorder) -1 , postorder, inorder)
+        root = self.build(0, len(inorder) - 1, postorder, inorder)
         return root
 
     def build(self, left, right, root_list, inorder):
