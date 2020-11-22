@@ -23,10 +23,11 @@ class Solution(object):
         :type S: int
         :rtype: int
         """
-        self.dfs_new(nums, 0, 0, S)
+        length = len(nums)
+        self.dfs_new(nums, 0, 0, S, length)
         return self.count
 
-    def dfs_new(self, nums, index, sum_num, target):
+    def dfs_new(self, nums, index, sum_num, target, length):
         """
 
         :param nums:
@@ -35,15 +36,12 @@ class Solution(object):
         :param target:
         :return:
         """
-        if index == len(nums):
+        if index == length:
             if sum_num == target:
                 self.count += 1
         else:
-            self.dfs_new(nums, index+1, sum_num + nums[index], target)
-            self.dfs_new(nums, index + 1, sum_num - nums[index], target)
-
-
-
+            self.dfs_new(nums, index+1, sum_num + nums[index], target, length)
+            self.dfs_new(nums, index + 1, sum_num - nums[index], target, length)
 
     def dfs(self, nums, index, target):
         """
