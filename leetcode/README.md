@@ -18,4 +18,6 @@ class TreeNode():
         self.val = val
         self.left = left
         self.right = right
+# 二维数据初始化
+matrix = [[0 for i in range(3)] for j in range(3)]
 ```
