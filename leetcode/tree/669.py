@@ -14,9 +14,6 @@ class Solution(object):
     """
 
     """
-    def __init__(self):
-        self.first = True
-        self.first_high = True
 
     def trimBST(self, root, low, high):
         """
@@ -25,6 +22,17 @@ class Solution(object):
         :type high: int
         :rtype: TreeNode
         """
+        if not root:
+            return None
+        if root.val < low:
+            return self.trimBST(root.right, low, high)
+        if root.val > high:
+            return self.trimBST(root.left, low, high)
+        root.left = self.trimBST(root.left, low, high)
+        root.right = self.trimBST(root.right, low, high)
+        return root
+
+
 
 
 
