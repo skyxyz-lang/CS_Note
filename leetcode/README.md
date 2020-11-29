@@ -20,4 +20,9 @@ class TreeNode():
         self.right = right
 # 二维数据初始化
 matrix = [[0 for i in range(3)] for j in range(3)]
+
+# 数据切片
+arr[0:mid]  获取 0, 1, 2, 3, ... mid - 1 的数据
+arr[mid:]   获取 mid, 末尾全部的数据，区别于 arr[mid:-1]
+
 ```
