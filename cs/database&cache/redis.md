@@ -39,7 +39,7 @@ struct sdshdr {
 
 ### Redis高可用
 1. 简单主从复制，replication [master写、slave读；master发送数据保持salve的更新；主节点挂了无法选举新的节点执行写操作]
-2. 哨兵, Sentinel [哨兵是一个独立的进程，哨兵会实时监控master节点的状态，当master不可用时会从slave节点中选出一个作为新的master，并修改其他节点的配置指向到新的master]
-        1. 监控，不断检测主从服务器是否正确
-        2. 提醒，某个Redis出现故障，可以通过API向管理员和其他Redis发送通知
-        3. 自动故障迁移，master坏了，会重新选举master，并且迁移。 
+2. 哨兵, Sentinel [哨兵是一个独立的进程，哨兵会实时监控master节点的状态，当master不可用时会从slave节点中选出一个作为新的master，并修改其他节点的配置指向到新的master]<br/>
+    1. 监控，不断检测主从服务器是否正确
+    2. 提醒，某个Redis出现故障，可以通过API向管理员和其他Redis发送通知
+    3. 自动故障迁移，master坏了，会重新选举master，并且迁移。 
