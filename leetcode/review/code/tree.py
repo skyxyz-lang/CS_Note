@@ -243,7 +243,31 @@ class Solution(object):
         self.travel(node.left, node)
         self.travel(node.right, node)
 
+    def quick_sort(self, arr, left, right):
+        """
 
-
-
-
+        :param arr:
+        :param left:
+        :param right:
+        :return:
+        """
+        l = left
+        r = right
+        if left > right:
+            return
+        point = arr[left]
+        while left < right:
+            while left < right and arr[right] >= point:
+                right -= 1
+            if left < right:
+                arr[left] = arr[right]
+                left += 1
+            while left < right and arr[left] < point:
+                left += 1
+            if left < right:
+                arr[right] = arr[left]
+                right -= 1
+        arr[left] = point
+        self.quick_sort(arr, l, left -1 )
+        self.quick_sort(arr, left + 1, r)
+        return arr
